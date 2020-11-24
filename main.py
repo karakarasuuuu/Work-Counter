@@ -7,7 +7,7 @@ cfg = ConfigParser()
 cfg.read('config.ini')
 token = cfg['token']['key']
 
-updater = Updater(token='TOKEN', use_context=True)
+updater = Updater(token=token, use_context=True)
 dispatcher = updater.dispatcher
 
 # To catch commands like "/start"
