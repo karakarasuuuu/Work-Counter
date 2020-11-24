@@ -1,5 +1,11 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, InlineQueryHandler, Filters
 from telegram import InlineQueryResultArticle, InputTextMessageContent
+from configparser import ConfigParser
+
+# Ref: http://fygul.blogspot.com/2017/07/configparser.html
+cfg = ConfigParser()
+cfg.read('config.ini')
+token = cfg['token']['key']
 
 updater = Updater(token='TOKEN', use_context=True)
 dispatcher = updater.dispatcher
